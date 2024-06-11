@@ -2,20 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import example from "./components/StateExample";
+import example from "./components/Example";
 import PokemonCard from "./components/PokemonCard";
+import Example from "./components/Example";
+import DeuxiemeExample from "./components/DeuxiemeExample";
+import NavBar from "./components/NavBar";
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
-  console.log(pokemonIndex);
-
-  const handlePrevious = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
-  const handleNext = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
-
   const pokemonList = [
     {
       name: "bulbasaur",
@@ -42,15 +35,21 @@ function App() {
     },
   ];
 
+  const [message, setMessage] = useState("");
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+  console.log(pokemonIndex);
+
   return (
     <div>
+      <NavBar
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        setPokemonIndex={setPokemonIndex}
+      />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0 ? (
-        <button onClick={handlePrevious}>Précédent</button>
-      ) : null}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={handleNext}>suivant</button>
-      ) : null}
+
+      <Example setMessage={setMessage} />
+      <DeuxiemeExample message={message} />
     </div>
   );
 }
