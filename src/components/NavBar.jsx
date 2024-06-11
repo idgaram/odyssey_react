@@ -1,12 +1,13 @@
 const NavBar = ({ pokemonIndex, setPokemonIndex, pokemonList }) => {
-  const handlePrevious = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
-  const handleNext = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
+  // const handlePrevious = () => {
+  //   setPokemonIndex(pokemonIndex - 1);
+  // };
+  // const handleNext = () => {
+  //   setPokemonIndex(pokemonIndex + 1);
+  // };
   const handleButton = () => {
     setPokemonIndex(index);
+    index === "3" ? alert("pika pikachu !!!") : null;
   };
 
   return (

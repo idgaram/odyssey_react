@@ -10,7 +10,7 @@ const KeyUl = () => {
   return (
     <div>
       <ul>
-        {cart.map((element, index) => (
+        {cart.map((element) => (
           <KeyExample
             key={element.name}
             emoji={element.emoji}

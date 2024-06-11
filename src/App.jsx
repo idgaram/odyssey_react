@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -9,6 +9,7 @@ import DeuxiemeExample from "./components/DeuxiemeExample";
 import NavBar from "./components/NavBar";
 import KeyExample from "./components/KeyExample";
 import KeyUl from "./components/KeyUl";
+import Test from "./components/Test";
 
 function App() {
   const pokemonList = [
@@ -39,6 +40,9 @@ function App() {
 
   const [message, setMessage] = useState("");
   const [pokemonIndex, setPokemonIndex] = useState(0);
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  });
 
   return (
     <div>
