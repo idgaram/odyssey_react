@@ -7,6 +7,8 @@ import PokemonCard from "./components/PokemonCard";
 import Example from "./components/Example";
 import DeuxiemeExample from "./components/DeuxiemeExample";
 import NavBar from "./components/NavBar";
+import KeyExample from "./components/KeyExample";
+import KeyUl from "./components/KeyUl";
 
 function App() {
   const pokemonList = [
@@ -37,7 +39,6 @@ function App() {
 
   const [message, setMessage] = useState("");
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  console.log(pokemonIndex);
 
   return (
     <div>
@@ -47,9 +48,6 @@ function App() {
         setPokemonIndex={setPokemonIndex}
       />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-
-      <Example setMessage={setMessage} />
-      <DeuxiemeExample message={message} />
     </div>
   );
 }
